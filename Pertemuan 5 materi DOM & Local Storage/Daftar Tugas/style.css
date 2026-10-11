@@ -1,0 +1,236 @@
+/* Variabel CSS (Custom Properties) untuk warna, radius, dan bayangan */
+:root {
+  --primary-color: #0f172a;
+  --accent-color: #2563eb;
+  --accent-hover: #1d4ed8;
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #334155;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --danger-color: #dc2626;
+  --success-color: #16a34a;
+  --warning-color: #d97706;
+  --radius: 8px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset dasar margin, padding, dan box-sizing untuk semua elemen */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling utama untuk halaman (body) */
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  padding: 20px 15px;
+}
+
+/* Kontainer utama untuk membatasi lebar tampilan di tengah */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Styling bagian header aplikasi */
+.app-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.app-header h1 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Kartu pembungkus section (Form, Filter, List) */
+.card {
+  background: var(--card-bg);
+  padding: 16px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+  border: 1px solid var(--border-color);
+}
+
+/* Styling label & tata letak form input */
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 8px;
+}
+
+/* Styling dasar untuk bidang input teks & pencarian */
+input[type="text"],
+input[type="search"] {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  outline: none;
+}
+
+/* Efek outline saat input dalam posisi fokus */
+input[type="text"]:focus,
+input[type="search"]:focus {
+  border-color: var(--accent-color);
+}
+
+/* Styling dasar untuk semua tombol */
+button {
+  cursor: pointer;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: var(--radius);
+  padding: 8px 14px;
+}
+
+/* Tombol Tambah Tugas */
+#add-button {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+#add-button:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Pesan error validasi form */
+.error-message {
+  color: var(--danger-color);
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+/* Layout section pencarian & tombol filter */
+.controls-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+/* Tombol filter status */
+.btn-filter {
+  flex: 1;
+  background-color: #f1f5f9;
+  color: var(--text-muted);
+}
+
+.btn-filter.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Header di atas daftar tugas (Judul & Counter) */
+.list-header {
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Kontainer utama daftar tugas (<ul>) */
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Styling untuk setiap item tugas (<li>) */
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  gap: 10px;
+}
+
+/* Tampilan item tugas jika statusnya 'selesai' */
+.task-item.is-completed {
+  background-color: #f1f5f9;
+  opacity: 0.7;
+}
+
+.task-item.is-completed .task-title {
+  text-decoration: line-through;
+}
+
+.task-content {
+  flex: 1;
+}
+
+/* Kelompok tombol aksi (Selesai, Edit, Hapus) */
+.task-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.btn-action {
+  padding: 4px 8px;
+  font-size: 0.8rem;
+}
+
+/* Variasi warna tombol aksi berdasarkan fungsinya */
+.btn-toggle {
+  background-color: #e2e8f0;
+}
+
+.btn-toggle.active {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.btn-edit {
+  background-color: #fef3c7;
+  color: var(--warning-color);
+}
+
+.btn-save {
+  background-color: #dcfce7;
+  color: var(--success-color);
+}
+
+.btn-delete {
+  background-color: #fee2e2;
+  color: var(--danger-color);
+}
+
+/* Input teks saat mode edit tugas aktif */
+.task-edit-input {
+  flex: 1;
+  padding: 6px;
+  font-size: 0.9rem;
+}
+
+/* Styling tampilan ketika daftar tugas kosong */
+.empty-state {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-muted);
+}
