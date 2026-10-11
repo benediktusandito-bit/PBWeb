@@ -1,0 +1,79 @@
+body {
+  font-family: Arial; /*font*/
+  margin: 20px; /*margin*/
+  padding: 0 15px; /*jarak*/
+}
+
+.mahasiswa {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 2px solid #000000; /*garis pada mahasiswa*/
+  border-radius: 10px; /*lengkungan sudut garis pada mahasiswa*/
+  background-color: #f9f9f9;
+}
+
+.mahasiswa h3 {
+  margin-top: 0;
+}
+
+#tombolHitung {
+  width: 100%; /*agar tombol hitung panjang*/
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px; /*lengkungan sudut tombol*/
+  font-size: 15px;
+  font-weight: bold; /*agar teks tombol tebal*/
+  cursor: pointer; /*mengubah bentuk korsor*/
+}
+
+#tombolHitung:hover {
+  background-color: #0056b3; /*efek tombol saat kursor didekatkan*/
+}
+
+#hasil {
+  margin-top: 30px; /*margin dari hasil*/
+}
+
+.tabel-hasil {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.tabel-hasil th,
+.tabel-hasil td {
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: center;
+}
+
+.tabel-hasil th {
+  background-color: #f2f2f2;
+}
+
+.row-lulus {
+  /*jika hasilnya lulus*/
+  background-color: #e6fffa; /*maka warna nya ini*/
+  color: #0d6efd;
+}
+
+.row-tidaklulus {
+  /*jika hasilnya tidak lulus*/
+  background-color: #f8d7da; /*maka warna nya ini*/
+  color: #721c24;
+}
+
+.row-error {
+  /*jika error input*/
+  background-color: #b4b4b4; /*maka warna nya ini*/
+  color: #363636;
+}
+
+.ringkasan-box {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #e2e3e5;
+  border-radius: 6px;
+}

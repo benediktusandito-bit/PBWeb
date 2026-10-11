@@ -1,0 +1,125 @@
+/* Mengatur perhitungan ukuran elemen agar padding & border tidak merusak lebar/tinggi elemen */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lucida Sans", sans-serif;
+  font-size: 17px;
+}
+
+.container {
+  display: grid;
+  /* Tata letak tampilan dasar/mobile (1 kolom lurus dari atas ke bawah) */
+  grid-template-areas:
+    "header"
+    "menu"
+    "main"
+    "facts"
+    "footer";
+  background-color: white;
+  gap: 10px;
+}
+
+.header {
+  grid-area: header;
+  background-color: purple;
+  text-align: center;
+  color: #ffffff;
+}
+
+.header > h1 {
+  font-size: 40px;
+}
+
+.menu {
+  grid-area: menu;
+}
+
+/* Mengubah link navigasi menjadi tampilan berbentuk tombol */
+.menu a {
+  display: block; /* Membuat link memenuhi seluruh lebar kolom */
+  padding: 5px;
+  margin-bottom: -10px;
+  background-color: #33b5e5;
+  color: #ffffff;
+  text-decoration: none; /* Menghilangkan garis bawah pada link agar rapi */
+}
+
+/* Efek saat kursor diarahkan ke tombol menu */
+.menu a:hover {
+  background-color: #0099cc;
+}
+
+.content {
+  grid-area: main;
+}
+
+.content > h1 {
+  font-size: 30px;
+  margin-bottom: 7px;
+}
+
+.content > p {
+  margin-bottom: 7px;
+}
+
+.facts {
+  grid-area: facts;
+  border: 1px solid #0099cc;
+  background-color: beige;
+  padding: 10px;
+}
+
+.facts > h2 {
+  font-size: 20px;
+}
+
+.facts li {
+  margin-bottom: 5px;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #0099cc;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* RESPONSIVE DESIGN (untuk tampilan layar tablet) */
+@media (min-width: 600px) {
+  .header {
+    grid-area: 1 / span 6; /* Header membentang di baris 1 sebanyak 6 kolom */
+  }
+  .menu {
+    grid-area: 2 / span 1; /* Menu di baris 2 mengambil 1 kolom */
+  }
+  .content {
+    grid-area: 2 / span 4; /* Konten di baris 2 mengambil 4 kolom */
+  }
+  .facts {
+    grid-area: 3 / span 6; /* Facts berpindah ke baris 3 membentang 6 kolom */
+  }
+  .footer {
+    grid-area: 4 / span 6;
+  }
+}
+
+/* RESPONSIVE DESIGN (untuk tampilan layar laptop) */
+@media (min-width: 768px) {
+  .header {
+    grid-area: 1 / span 6;
+  }
+  .menu {
+    grid-area: 2 / span 1; /* Kolom kiri */
+  }
+  .content {
+    grid-area: 2 / span 4; /* Kolom tengah (konten utama) */
+  }
+  .facts {
+    grid-area: 2 / span 1; /* Kolom kanan (facts sejajar dengan menu dan konten) */
+  }
+  .footer {
+    grid-area: 3 / span 6;
+  }
+}

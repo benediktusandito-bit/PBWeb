@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pemesanan Tiket Perjalanan</title>
+
+    <!-- Menghubungkan file HTML dengan CSS -->
+    <link rel="stylesheet" href="style3.css" />
+  </head>
+  <body>
+    <!-- HEADER & NAVIGASI -->
+    <header>
+      <div class="container header-content">
+        <!-- Logo -->
+        <a href="#" class="logo">Tiket<span>Go</span></a>
+
+        <!-- Tag <nav> untuk area navigasi menu -->
+        <nav>
+          <ul>
+            <li><a href="#" class="active">Beranda</a></li>
+            <!-- Jika menekan tombol cek jadwal, maka akan diarahkan ke bagian jadwal -->
+            <li><a href="#jadwal">Cek Jadwal</a></li>
+            <!-- Jika menekan tombol bantuan, maka akan diarahkan ke kontak Whatsapp saya -->
+            <li><a href="https://wa.me/qr/Z7CSJSEC6RHSI1">Bantuan</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- KONTEN UTAMA -->
+    <!-- Tag <main> menandakan konten utama dari halaman ini -->
+    <main class="container">
+      <!-- SECTION 1: FORM PEMESANAN TIKET -->
+      <section class="card-form">
+        <h2>Pesan Tiket Perjalanan</h2>
+        <p class="subtitle">
+          Pilih transportasi favoritmu dan tentukan rutenya!
+        </p>
+
+        <form action="#jadwal" method="GET">
+          <!-- PILIHAN KENDARAAN -->
+          <div class="transport-group">
+            <p class="label-title">Mode Transportasi:</p>
+
+            <div class="radio-options">
+              <label class="radio-card">
+                <input type="radio" name="transportasi" value="ojek" checked />
+                <span>🛵 Ojek</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="transportasi" value="bus" />
+                <span>🚌 Bus</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="transportasi" value="kereta" />
+                <span>🚂 Kereta Api</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="transportasi" value="kapal" />
+                <span>🚢 Kapal Laut</span>
+              </label>
+              <label class="radio-card">
+                <input type="radio" name="transportasi" value="pesawat" />
+                <span>✈️ Pesawat</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- BARIS INPUT 1: LOKASI ASAL & TUJUAN -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="asal">Kota / Lokasi Asal</label>
+              <input
+                type="text"
+                id="asal"
+                name="asal"
+                placeholder="Contoh: Jakarta"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="tujuan">Kota / Lokasi Tujuan</label>
+              <input
+                type="text"
+                id="tujuan"
+                name="tujuan"
+                placeholder="Contoh: Surabaya"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- BARIS INPUT 2: TANGGAL & JUMLAH PENUMPANG -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="tanggal">Tanggal Keberangkatan</label>
+              <input type="date" id="tanggal" name="tanggal" required />
+            </div>
+
+            <div class="form-group">
+              <label for="penumpang">Jumlah Penumpang</label>
+              <select id="penumpang" name="penumpang">
+                <option value="1">1 Orang</option>
+                <option value="2">2 Orang</option>
+                <option value="3">3 Orang</option>
+                <option value="4">4+ Orang</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- TOMBOL SUBMIT -->
+          <button type="submit" class="btn-submit">Cari Tiket</button>
+        </form>
+      </section>
+
+      <!-- SECTION 2: DAFTAR JADWAL / TIKET TERSEDIA -->
+      <section id="jadwal" class="ticket-section">
+        <h2>Daftar Tiket & Jadwal Keberangkatan</h2>
+        <p class="subtitle">Berikut jadwal perjalanan yang tersedia hari ini</p>
+
+        <!-- Tabel HTML murni untuk menampilkan data secara terstruktur -->
+        <div class="table-responsive">
+          <table class="ticket-table">
+            <thead>
+              <tr>
+                <th>Kendaraan</th>
+                <th>Nama Armada</th>
+                <th>Rute Perjalanan</th>
+                <th>Jam Berangkat</th>
+                <th>Harga</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge badge-ojek">Ojek</span></td>
+                <td><strong>Go Ride</strong></td>
+                <td>Seluruh Wilayah Sleman</td>
+                <td>Saat Anda Memesan</td>
+                <td class="price">Rp 20.000</td>
+                <td><a href="#bayar" class="btn-buy">Pilih Tiket</a></td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-bus">Bus</span></td>
+                <td><strong>Sumber Rejeki</strong></td>
+                <td>Yogyakarta ➔ Semarang</td>
+                <td>07:30 WIB</td>
+                <td class="price">Rp 90.000</td>
+                <td><a href="#bayar" class="btn-buy">Pilih Tiket</a></td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-kereta">Kereta</span></td>
+                <td><strong>Prameks</strong></td>
+                <td>Stasiun Yogyakarta ➔ Stasiun Bandung</td>
+                <td>09:15 WIB</td>
+                <td class="price">Rp 150.000</td>
+                <td><a href="#bayar" class="btn-buy">Pilih Tiket</a></td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-kapal">Kapal</span></td>
+                <td><strong>KM Kelud (PELNI)</strong></td>
+                <td>Tanjung Adikarto ➔ Tanjung Priok</td>
+                <td>14:00 WIB</td>
+                <td class="price">Rp 310.000</td>
+                <td><a href="#bayar" class="btn-buy">Pilih Tiket</a></td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-pesawat">Pesawat</span></td>
+                <td><strong>Garuda Indonesia</strong></td>
+                <td>Bandara Adisutjipto ➔ Bandara Ngurah Rai</td>
+                <td>16:45 WIB</td>
+                <td class="price">Rp 1.250.000</td>
+                <td><a href="#bayar" class="btn-buy">Pilih Tiket</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container footer-content">
+        <p>&copy; 2026 <strong>TiketGo</strong>.</p>
+      </div>
+    </footer>
+  </body>
+</html>
